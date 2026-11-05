@@ -1,0 +1,29 @@
+:root {
+    /* Fondos */
+     --color-bg: #0d0f17;  /* fondo general de la pagina */
+     --color-bg-header: #090b10; /* fondo del header */
+     --color-surface: #171a26; /* tarjetas, sidebar */
+     --color-surface-input: #0c0e14; /* campo de busqueda */
+     --color-border: #262a3a; /* borde de tarjetas */
+
+
+     /* Marca */
+     --color-primary: #7c3aed; /* botones "Login", "Ver mas", "Buscar" */
+     --color-primary-hover: #6d28d9;
+     --color-primary-light: #a78bfa; /* "ZONE", etiquetas (indie, pc, destacado) */
+     --color-primary: #c4b5fd; /* texto del boton "suscripcion" */
+     --color-primary: #6d3fd1; /* Borde de botones outline */
+
+
+     /* hero y placeholders de imagen */
+     --gradient-hero: linear-gradient(135deg, #2e1f63 0%, #16233c 100%);
+     --gradient-image: linear-gradient(135deg, #2a2050 0%, #14233f 100%);
+
+     /* texto */
+     --color-text: #f1f2f6; /* titulos y links del menu */
+     --color-text-muted: #9ca3b5; /* descripciones, placeholders */
+     --color-text-on-primary: #ffffff; 
+
+     
+
+}
