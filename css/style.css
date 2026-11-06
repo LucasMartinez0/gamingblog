@@ -23,7 +23,16 @@
      --color-text: #f1f2f6; /* titulos y links del menu */
      --color-text-muted: #9ca3b5; /* descripciones, placeholders */
      --color-text-on-primary: #ffffff; 
-
-     
-
 }
+
+
+/* navbar */
+
+header {
+    background: var(--color-bg-header)
+}
+
+.zone {
+    color: var(--color-primary-light)
+}
+
