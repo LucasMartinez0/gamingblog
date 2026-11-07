@@ -114,6 +114,9 @@ header {
   box-shadow: 0 0 0 .25rem rgba(124, 58, 237, .25);
 }
 
+.btn-primary-brand {
+  background: var(--color-primary-light);
+}
 /* body */
 
 body {
