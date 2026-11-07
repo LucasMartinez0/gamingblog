@@ -1,86 +1,105 @@
 :root {
-    --footer-bg: #0A0D12;
-    --border: #262C3A;
-    --accent: #A78BFA;
-    --text: #E8EAF0;
-    --link: #C7CCDA;
-    --muted: #A0A7B8;
+  --footer-bg: #0a0d12;
+  --border: #262c3a;
+  --accent: #a78bfa;
+  --text: #e8eaf0;
+  --link: #c7ccda;
+  --muted: #a0a7b8;
 
+  /* Fondos */
+  --color-bg: #0d0f17; /* fondo general de la pagina */
+  --color-bg-header: #090b10; /* fondo del header */
+  --color-surface: #171a26; /* tarjetas, sidebar */
+  --color-surface-input: #0c0e14; /* campo de busqueda */
+  --color-border: #262a3a; /* borde de tarjetas */
 
-    /* Fondos */
-     --color-bg: #0d0f17;  /* fondo general de la pagina */
-     --color-bg-header: #090b10; /* fondo del header */
-     --color-surface: #171a26; /* tarjetas, sidebar */
-     --color-surface-input: #0c0e14; /* campo de busqueda */
-     --color-border: #262a3a; /* borde de tarjetas */
+  /* Marca */
+  --color-primary: #7c3aed; /* botones "Login", "Ver mas", "Buscar" */
+  --color-primary-hover: #6d28d9;
+  --color-primary-light: #a78bfa; /* "ZONE", etiquetas (indie, pc, destacado) */
+  --color-primary: #c4b5fd; /* texto del boton "suscripcion" */
+  --color-primary: #6d3fd1; /* Borde de botones outline */
 
+  /* hero y placeholders de imagen */
+  --gradient-hero: linear-gradient(135deg, #2e1f63 0%, #16233c 100%);
+  --gradient-image: linear-gradient(135deg, #2a2050 0%, #14233f 100%);
 
-     /* Marca */
-     --color-primary: #7c3aed; /* botones "Login", "Ver mas", "Buscar" */
-     --color-primary-hover: #6d28d9;
-     --color-primary-light: #a78bfa; /* "ZONE", etiquetas (indie, pc, destacado) */
-     --color-primary: #c4b5fd; /* texto del boton "suscripcion" */
-     --color-primary: #6d3fd1; /* Borde de botones outline */
-
-
-     /* hero y placeholders de imagen */
-     --gradient-hero: linear-gradient(135deg, #2e1f63 0%, #16233c 100%);
-     --gradient-image: linear-gradient(135deg, #2a2050 0%, #14233f 100%);
-
-     /* texto */
-     --color-text: #f1f2f6; /* titulos y links del menu */
-     --color-text-muted: #9ca3b5; /* descripciones, placeholders */
-     --color-text-on-primary: #ffffff; 
+  /* texto */
+  --color-text: #f1f2f6; /* titulos y links del menu */
+  --color-text-muted: #9ca3b5; /* descripciones, placeholders */
+  --color-text-on-primary: #ffffff;
 }
-
 
 /* navbar */
 
-header {
-    background: var(--color-bg-header)
-}
-
-.zone {
-    color: var(--color-primary-light)
-}
-
-.pixel {
+.navbar-pixel,
+.navbar-pixel:hover,
+.navbar-pixel:focus,
+.navbar-pixel:active {
     color: var(--color-text)
 }
 
+.navbar-zone span {
+    color: var(--color-primary-light)
+}
+
+header {
+  background: var(--color-bg-header);
+}
+
+.zone {
+  color: var(--color-primary-light);
+}
+
+.pixel {
+  color: var(--color-text);
+}
+
 .links {
-    color: var(--color-text-muted)
+  color: var(--color-text-muted);
 }
 
-.suscription-button {
-   background: transparent;
-   border: 1px solid var(--color-primary-light);
-   color: var(--color-primary-light);
+.navbar .nav-link {
+    color: var(--color-text-muted);
+    transition:color 0.2s;
 }
 
-.button-suscript:hover {
-    background: var(--color-primary);
-    color: var(--color-primary-light);
-}
-
-
-.log-button {
-   background: var(--color-primary);
-   border: 1px solid var(--color-border);
-   color: #ffffff;
-}
-
-.button-log:hover {
-    background: var(--color-primary);
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link:active {
     color: #ffffff;
 }
 
+.suscription-button {
+  background: transparent;
+  border: 1px solid var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+
+.button-suscript:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-light);
+}
+
+.log-button {
+  background: var(--color-primary);
+  border: 1px solid var(--color-border);
+  color: #ffffff;
+}
+
+.button-log:hover {
+  background: var(--color-primary);
+  color: #ffffff;
+}
 
 body {
   margin: 0;
-  background: #0E1117;
+  background: #0e1117;
   color: var(--text);
-  font: 16px/1.5 Inter, system-ui, sans-serif;
+  font:
+    16px/1.5 Inter,
+    system-ui,
+    sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -101,7 +120,7 @@ body {
   color: var(--accent);
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -126,7 +145,9 @@ body {
   background: var(--primary);
   color: #fff;
   border-radius: 8px;
-  font: 600 15px Inter, sans-serif;
+  font:
+    600 15px Inter,
+    sans-serif;
   text-decoration: none;
 }
 
@@ -136,51 +157,50 @@ body {
   color: #fff;
 }
 
-
-
 .site-footer {
-    background: var(--footer-bg);
-    border-top: 1px solid var(--border);
-    padding: 40px 0;
-    margin-top: 48px;
-    color: var(--text);
-    font-family: inter, sistem-ui, sans-serif;
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 48px;
+  color: var(--text);
+  font-family: inter, sistem-ui, sans-serif;
 }
 
 .logo {
-    font: 700 26px  Rajdhani, sans-serif;
-    color: #fff;
-    letter-spacing: 1px;
-    text-decoration: none;
+  font:
+    700 26px Rajdhani,
+    sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: none;
 }
 .logo span {
-    color:var(--accent);
+  color: var(--accent);
 }
 
 .site-footer h3 {
-    font-family: Rajdhani, inter, sans-serif;
-    font-size: 1.25rem;
-    color: var(--text);
-    margin-bottom: 12px;
-
+  font-family: Rajdhani, inter, sans-serif;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-bottom: 12px;
 }
 
 .footer-muted {
-    color: var(--muted);
+  color: var(--muted);
 }
 
-.footer-links li{
-    padding: 4px 0;
+.footer-links li {
+  padding: 4px 0;
 }
 
 .footer-links a {
-    color: var(--link);
-    text-decoration: none;
+  color: var(--link);
+  text-decoration: none;
 }
 
 .footer-links a:hover,
 .footer-links a:focus-visible {
-    color: #fff;
+  color: #fff;
 }
 
 .footer-bottom {
