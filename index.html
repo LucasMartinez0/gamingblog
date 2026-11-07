@@ -36,28 +36,82 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link links" aria-current="page" href="index.html"
+                <a
+                  class="nav-link links"
+                  aria-current="page"
+                  href="/pages/error404.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="/pages/error404.html">Galeria</a>
+                <a class="nav-link links" href="/pages/galeria.html">Galeria</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="/pages/error404.html">Contacto</a>
+                <a class="nav-link links" href="">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="/pages/acercadenosotros.html">Acerca de nosotros</a>
+                <a class="nav-link links" href="/pages/acercadenosotros.html"
+                  >Acerca de nosotros</a
+                >
               </li>
             </ul>
             <button
               class="btn btn-outline-brand me-4 suscription-button button-suscript"
+              data-bs-toggle="modal"
+              data-bs-target="#suscription"
               type="submit"
             >
               Suscripcion
             </button>
           </div>
-          <div class="btn log-button button-log">Login</div>
+          <div
+            class="btn log-button button-log"
+            data-bs-toggle="modal"
+            data-bs-target="#login"
+          >
+            Login
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="suscription"
+          tabindex="-1"
+          aria-labelledby="suscriptionLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="suscriptionLabel">
+                  Suscribite al blog
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <p>Recibí las novedades gamer en tu correo</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="subEmail" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="subEmail"
+                      placeholder="tu@email.com"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary-brand w-100">
+                    Suscribirme
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
