@@ -202,21 +202,22 @@ body {
     color: var(--color-text);
 }
 
-.about-hero {
-    border-bottom: 1px solid var(--color-border);
-    padding: 72px 0 64px;
-    text-align: center;
-    }
+/* acerca de nosotros */
 
-    .about-tag {
-    display: inline-block;
-    padding: 4px 14px;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    background: var(--color-bg-header);
-    color: var(--color-primary-light);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .5px;
-    text-transform: uppercase;
+.links:hover,
+.links:focus-visible,
+.links[aria-current="page"] {
+    color: var(--color-text);
+}
+
+.about-text {
+    color: var(--color-text-muted);
+}
+
+.about-card {
+    height: 100%;
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--footer-bg);
 }
