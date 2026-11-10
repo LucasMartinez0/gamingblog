@@ -204,20 +204,194 @@ body {
 
 /* acerca de nosotros */
 
-.links:hover,
-.links:focus-visible,
-.links[aria-current="page"] {
-    color: var(--color-text);
+.about-section {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.about-heading {
+  font: 700 clamp(1.75rem, 4vw, 2.25rem) / 1.15 Rajdhani, Inter, sans-serif;
+  color: var(--color-text);
+  margin-bottom: 1rem;
 }
 
 .about-text {
-    color: var(--color-text-muted);
+  color: var(--color-text-muted);
+  max-width: 36rem;
 }
 
-.about-card {
-    height: 100%;
-    padding: 24px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--footer-bg);
+/* ---------- Presentación ---------- */
+.about-hero {
+  background: var(--gradient-hero);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3.5rem);
+}
+
+.about-title {
+  font: 700 clamp(2.5rem, 7vw, 4.5rem) / 1.05 Rajdhani, Inter, sans-serif;
+  color: var(--color-text);
+  max-width: 14ch;
+  margin-bottom: 1rem;
+}
+
+.about-lead {
+  color: var(--link);
+  font-size: 1.125rem;
+  max-width: 38rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Botones */
+.btn-about {
+  --bs-btn-color: var(--color-text-on-primary);
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-hover-color: var(--color-text-on-primary);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-active-color: var(--color-text-on-primary);
+  --bs-btn-active-bg: var(--color-primary-hover);
+  --bs-btn-active-border-color: var(--color-primary-hover);
+  --bs-btn-focus-shadow-rgb: 167, 139, 250;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+}
+
+.btn-about-outline {
+  --bs-btn-color: var(--color-primary-light);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--color-primary-light);
+  --bs-btn-hover-color: var(--color-bg);
+  --bs-btn-hover-bg: var(--color-primary-light);
+  --bs-btn-hover-border-color: var(--color-primary-light);
+  --bs-btn-active-color: var(--color-bg);
+  --bs-btn-active-bg: var(--color-primary-light);
+  --bs-btn-active-border-color: var(--color-primary-light);
+  --bs-btn-focus-shadow-rgb: 167, 139, 250;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+}
+
+/*Qué es PixelZone: lista de contenidos*/
+.about-offer {
+  margin: 0;
+}
+
+.about-offer-item {
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.about-offer-item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-offer dt {
+  font: 600 1.35rem / 1.2 Rajdhani, Inter, sans-serif;
+  color: var(--color-text);
+}
+
+.about-offer dd {
+  margin: 0.25rem 0 0;
+  color: var(--color-text-muted);
+}
+
+/*Lo que nos importa*/
+.about-value {
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1rem;
+}
+
+.about-value h3 {
+  font: 600 1.25rem / 1.2 Rajdhani, Inter, sans-serif;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.about-value p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ---------- Equipo: pantalla de selección de jugador ---------- */
+.about-slot {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2rem 1rem 1.25rem;
+  text-align: center;
+  outline: 2px solid transparent;
+  outline-offset: 10px;
+  transition:
+    outline-color 0.15s,
+    outline-offset 0.15s,
+    border-color 0.15s;
+}
+
+.about-slot:hover {
+  border-color: var(--color-primary-light);
+  outline-color: var(--color-primary-light);
+  outline-offset: 4px;
+}
+
+.about-slot-tag {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  font: 700 0.8rem / 1 Rajdhani, Inter, sans-serif;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.5rem;
+}
+
+.about-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  display: grid;
+  place-items: center;
+  background: var(--gradient-image);
+  color: var(--color-primary-light);
+  font: 700 2rem / 1 Rajdhani, Inter, sans-serif;
+  letter-spacing: 0.04em;
+  clip-path: polygon(
+    0 8px,
+    8px 8px,
+    8px 0,
+    calc(100% - 8px) 0,
+    calc(100% - 8px) 8px,
+    100% 8px,
+    100% calc(100% - 8px),
+    calc(100% - 8px) calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    8px 100%,
+    8px calc(100% - 8px),
+    0 calc(100% - 8px)
+  );
+}
+
+.about-slot-name {
+  font: 600 1.15rem / 1.2 Rajdhani, Inter, sans-serif;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ---------- Cierre ---------- */
+.about-cta {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ---------- Sin animaciones si el usuario lo pide ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .about-slot {
+    transition: none;
+  }
 }
