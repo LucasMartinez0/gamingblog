@@ -137,6 +137,58 @@ body {
   min-height: 100vh;
 }
 
+
+/* cards */
+
+.card-post {
+  --bs-card-bg: var(--color-surface);   
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--color-text-muted);
+}
+
+.card-post .card-body {
+  padding: 0 0 0 1rem;     
+}
+
+.card-post-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;       
+  border-radius: 10px;
+}
+
+.card-tag {
+  color: var(--color-primary-light);
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-post-title {
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: .25rem 0 .5rem;
+}
+
+.card-post .card-text {
+  color: var(--color-text-muted);
+}
+
+.btn-primary-brand {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+.btn-primary-brand:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text-on-primary);
+}
+
 .error-page {
   flex: 1;
   display: flex;
