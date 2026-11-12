@@ -219,10 +219,10 @@ body {
 }
 
 .aside-box .form-control:focus {
-  background-color: var(--color-surface-input);
+  background: var(--color-surface-input);
   color: var(--color-text);
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 0.25rem rgba(124, 58, 237, 0.25);
+  box-shadow: 0 0 0 .25rem rgba(124, 58, 237, .25);
 }
 
 .aside-list {
@@ -242,6 +242,17 @@ body {
 .aside-list a:hover,
 .aside-list a:focus {
   color: var(--color-primary-light);
+}
+
+.ad-box {
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-image);
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  color: var(--color-text-muted);
+  font-size: .9rem;
 }
 
 .error-page {
