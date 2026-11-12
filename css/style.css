@@ -236,7 +236,7 @@ body {
 .about-banner {
   position: relative;
   height: clamp(300px, 45vw, 420px);
-  background: var(--about-gradient); /* se ve mientras carga la foto */
+  background: var(--about-gradient);
   overflow: hidden;
 }
 
@@ -247,7 +247,7 @@ body {
   object-fit: cover;
 }
 
-/* Degradados: arriba (navbar) y abajo (título) */
+/* Degradados */
 .about-banner::before {
   content: "";
   position: absolute;
@@ -285,7 +285,6 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-/* ★ NUEVO: miniatura de cada item */
 .about-thumb {
   flex-shrink: 0;
   width: 112px;
@@ -312,7 +311,6 @@ body {
     height: 66px;
   }
 }
-
 
 /* ---------- Lo que nos importa ---------- */
 .about-value {
@@ -362,7 +360,6 @@ body {
   letter-spacing: .05em;
 }
 
-/* Cuadrado con las esquinas escalonadas, como un sprite */
 .about-avatar {
   width: 96px;
   height: 96px;
@@ -381,7 +378,7 @@ body {
   );
 }
 
-/* ★ NUEVO: si el avatar lleva una foto en vez de iniciales */
+/*  lleva una foto en vez de iniciales */
 .about-avatar img {
   display: block;
   width: 100%;
@@ -407,8 +404,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-
-/* ---------- Sin animaciones si el usuario lo pide ---------- */
 @media (prefers-reduced-motion: reduce) {
   .about-slot {
     transition: none;
