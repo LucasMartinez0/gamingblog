@@ -567,3 +567,153 @@ main {
     transform: none;
   }
 }
+
+
+.page-galeria {
+  /* Variables propias de la galería, construidas con las tuyas */
+  --gal-fondo-card: #131822;   /* un poco más claro que --bg */
+  --gal-borde: var(--border);
+  --gal-acento: var(--accent);
+  --gal-texto-suave: var(--muted);
+
+  padding-bottom: 4rem;        /* SIN padding-top: el banner arranca en el borde */
+}
+
+/* BANNER CON VIDEO
+   El navbar es fixed-top: flota sobre lo que haya debajo. Como el banner
+   empieza en el borde superior de la página, queda "detrás" del navbar. */
+.gal-banner {
+  position: relative;
+  min-height: 22rem;
+  display: flex;
+  align-items: flex-end;      
+  padding: 7rem 0 2rem;        
+  overflow: hidden;           
+  /* Mismo degradado violeta de tu carrusel: si el video falla o tarda
+     en cargar, el banner igual se ve (no queda negro). */
+  background: linear-gradient(135deg, #2A2150, #16243A);
+  margin-bottom: 2.5rem;
+}
+
+/* El video llena todo el banner (equivale a background-size: cover) */
+.gal-banner-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Capa degradada sobre el video: oscurece arriba (navbar legible) y
+   abajo se funde con el fondo de la página (--bg). */
+.gal-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 13, 18, .70) 0%,
+    rgba(10, 13, 18, .15) 40%,
+    var(--bg) 100%
+  );
+}
+
+/* El texto va por encima de la capa */
+.gal-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.gal-title {
+  margin: 0 0 .5rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #fff;
+}
+.gal-intro {
+  max-width: 55ch;
+  margin: 0;
+  color: var(--gal-texto-suave);
+}
+
+/* TARJETA */
+.gal-card {
+  margin: 0;                   
+  height: 100%;
+  background: var(--gal-fondo-card);
+  border: 1px solid var(--gal-borde);
+  border-radius: .75rem;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.gal-card:hover {
+  border-color: var(--gal-acento);
+}
+
+/* VIDEO DE LA TARJETA: proporción fija 4:3 recortando con cover */
+.gal-media {
+  position: relative;          
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.gal-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .35s ease;
+}
+.gal-card:hover .gal-media video,
+.gal-card:hover .gal-poster {
+  transform: scale(1.05);
+}
+
+
+.gal-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;        
+ 
+  transition: opacity .25s ease, transform .35s ease;
+}
+.gal-card.is-playing .gal-poster {
+  opacity: 0;
+}
+
+/* TEXTO DE LA TARJETA */
+.gal-card figcaption {
+  padding: 1rem 1.1rem 1.25rem;
+}
+.gal-card-title {
+  margin: .5rem 0 .25rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+}
+.gal-card figcaption p {
+  margin: 0;
+  color: var(--gal-texto-suave);
+  font-size: .95rem;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-card,
+  .gal-media video,
+  .gal-poster {
+    transition: none;
+  }
+  .gal-card:hover .gal-media video,
+  .gal-card:hover .gal-poster {
+    transform: none;
+  }
+}
