@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Escríbenos tu consulta o sugerencia a PixelZone, el blog gaming con reseñas, noticias y guías."
+    />
+    <meta
+      name="author"
+      content="Lucas Martinez, Diego Borgmann, Francisco Diaz, Javier Picuard"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rajdhani:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Contacto | PixelZone</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <nav
+        class="navbar navbar-expand-lg fixed-top site-nav"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="logo" href="../index.html">PIXEL<span>ZONE</span></a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="galeria.html">Galería</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="acercadenosotros.html">Acerca de nosotros</a>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-2">
+              <button class="btn-pixel btn-pixel-outline" type="button">
+                Suscripción
+              </button>
+              <a class="btn-pixel" href="login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="page-offset">
+      <section class="container py-5" aria-labelledby="contacto-title">
+        <div class="row g-4 justify-content-center">
+          <!-- Tarjeta del formulario -->
+          <div class="col-lg-5">
+            <div class="card h-100">
+              <div class="card-body p-4">
+                <h1 id="contacto-title" class="h2 mb-4">Contacto</h1>
+                <form>
+                  <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nombre"
+                      name="nombre"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea
+                      class="form-control"
+                      id="mensaje"
+                      name="mensaje"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn-pixel">
+                    Enviar consulta
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta del mapa -->
+          <div class="col-lg-5">
+            <div class="card h-100 overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps?q=San+Miguel+de+Tucuman&output=embed"
+                title="Mapa con la ubicación de PixelZone"
+                loading="lazy"
+                allowfullscreen
+                class="w-100 h-100 border-0"
+                style="min-height: 300px"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Columna 1: Marca -->
+          <div class="col-12 col-md-4">
+            <a class="logo" href="../index.html">PIXEL<span>ZONE</span></a>
+            <p class="footer-muted mt-2">
+              Reseñas, noticias y guías para gamers
+            </p>
+          </div>
+
+          <!-- Columna 2: Redes -->
+          <div class="col-12 col-md-4">
+            <h3>Redes</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="error404.html">Instagram</a></li>
+              <li><a href="error404.html">Youtube</a></li>
+              <li><a href="error404.html">Discord</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Info -->
+          <div class="col-12 col-md-4">
+            <h3>Info</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="acercadenosotros.html">Acerca de nosotros</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="#">Términos y condiciones</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 PixelZone. Proyecto educativo de RollingCode School.
+            Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
