@@ -20,6 +20,12 @@
     <title>Gaming Blog</title>
   </head>
   <body>
+    <header class="container">
+      <nav class="navbar navbar-expand-lg navbar-pixel">
+        <div class="container">
+          <a class="navbar-brand fw-bold pixel" href="index.html"
+            >PIXEL<span class="zone navbar-zone">ZONE</span></a
+          >
     <!-- NAVBAR -->
     <header>
       <nav
@@ -28,7 +34,6 @@
       >
         <div class="container">
           <a class="logo" href="index.html">PIXEL<span>ZONE</span></a>
-
           <button
             class="navbar-toggler"
             type="button"
@@ -44,6 +49,250 @@
           <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                <a
+                  class="nav-link links"
+                  aria-current="page"
+                  href="/pages/error404.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link links" href="/pages/galeria.html">Galeria</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link links" href="">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link links" href="/pages/acercadenosotros.html"
+                  >Acerca de nosotros</a
+                >
+              </li>
+            </ul>
+            <button
+              class="btn btn-outline-brand me-4 suscription-button button-suscript"
+              data-bs-toggle="modal"
+              data-bs-target="#suscription"
+              type="submit"
+            >
+              Suscripcion
+            </button>
+          </div>
+          <div
+            class="btn log-button button-log"
+            data-bs-toggle="modal"
+            data-bs-target="#login"
+          >
+            Login
+          </div>
+        </div>
+        <div
+          class="modal fade"
+          id="suscription"
+          tabindex="-1"
+          aria-labelledby="suscriptionLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="suscriptionLabel">
+                  Suscribite al blog
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <p>Recibí las novedades gamer en tu correo</p>
+                <form>
+                  <div class="mb-3">
+                    <label for="subEmail" class="form-label"
+                      >Email<span class="text-danger"> *</span></label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="subEmail"
+                      placeholder="tu@gmail.com"
+                      minlength="10"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary-brand w-100">
+                    Suscribirme
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="login" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5
+                  class="modal-title"
+                  id="loginweb"
+                  aria-labelledby="loginweb"
+                  aria-hidden="true"
+                >
+                  Iniciar sesion
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="cerrar"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="loginEmail" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="loginEmail"
+                      placeholder="tu@gmail.com"
+                      required
+                      minlength="15"
+                      maxlength="50"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="loginPass" class="form-label">Contraseña</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="loginPass"
+                      placeholder="********"
+                      required
+                      minlength="15"
+                      maxlength="25"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary-brand w-100">
+                    Entrar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="row g-4">
+        <section class="col-lg-8" aria-labelledby="titulo-entradas">
+          <article class="card card-post mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-4">
+                <img
+                  src="./img/Gta6.jpg"
+                  alt="Portada GTA 6"
+                  class="img-fluid card-post-img"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <span class="card-tag">GTA 6</span>
+                  <h3 class="card-post-title">
+                    Uno de los lanzamientos mas esperados
+                  </h3>
+                  <p class="card-text">
+                    GTA 6 promete ser el mejor juego de la saga hasta la fecha,
+                    con gráficos impresionantes y una historia envolvente.
+                  </p>
+                  <a
+                    href="https://www.youtube.com/watch?v=_yl5ELcmugI"
+                    class="btn btn-primary-brand"
+                    >Ver trailer</a
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-post mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-4">
+                <img
+                  src="./img/CEO.jpg"
+                  alt="Portada GTA 6"
+                  class="img-fluid card-post-img"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <span class="card-tag">Jensen Huang</span>
+                  <h3 class="card-post-title">
+                    El precio de las graficas se desploma
+                  </h3>
+                  <p class="card-text">
+                    Jensen Huang, CEO de NVIDIA, envuelto en un revuelo. Que
+                    puede comprometer la gran fortuna de su empresa. La noticia ha generado un gran conmosion en la industria tecnológica. 
+                  </p>
+                  <a href="https://www.infobae.com/estados-unidos/2026/11/10/el-divorcio-mas-caro-de-la-historia-la-esposa-del-ceo-de-nvidia-podria-recibir-usd-75000-millones/" class="btn btn-primary-brand">Leer mas</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="card card-post mb-3">
+            <div class="row g-0 align-items-center">
+              <div class="col-md-4">
+                <img
+                  src="./img/ia.jpg"
+                  alt="Portada GTA 6"
+                  class="img-fluid card-post-img"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <span class="card-tag">La IA y el hacking.</span>
+                  <h3 class="card-post-title">
+                    Es momento de que detengamos la IA? 
+                  </h3>
+                  <p class="card-text">
+                    Despues del hackeo a BINANCE, se registraron mas de 100 intentos de hackeo a diferentes empresas. La IA esta siendo utilizada para vulnerar la seguridad de las empresas y robar informacion sensible.
+                  </p>
+                  <a href="https://www.infobae.com/tecno/2026/10/21/un-solo-hacker-uso-agentes-de-ia-para-infiltrarse-en-mas-de-100-sitios-web-de-empresas/" class="btn btn-primary-brand">Leer mas</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+         <aside class="col-lg-4">
+        <div class="aside-box mb-3">
+          <form role="search">
+            <label for="buscar" class="aside-label">Buscar artículos</label>
+            <div class="d-flex gap-2">
+              <input type="search" id="buscar" class="form-control" placeholder="Buscar" required>
+              <button type="submit" class="btn btn-primary-brand">Buscar</button>
+            </div>
+          </form>
+        </div>
+        <nav class="aside-box mb-3">
+          <h2 id="titulo-categorias" class="aside-title">Categorias</h2>
+          <ul class="aside-list">
+            <li><a href="https://vandal.elespanol.com/noticias/videojuegos">Noticias</a></li>
+            <li><a href="#">Reseñas</a></li>
+            <li><a href="#">Guias</a></li>
+            <li><a href="#">PC</a></li>
+            <li><a href="#">Consolas</a></li>
+            <li><a href="#">Indie</a></li>
+            <li><a href="#">Retro</a></li>
+          </ul>
+        </nav>
+        <div class="ad-box d-none d-lg-flex">
+          <span>Publicidad</span>
+        </div>
+      </aside>
+      </div>
+    </main>
                 <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
@@ -168,7 +417,6 @@
         </div>
       </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>

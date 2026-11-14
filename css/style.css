@@ -1,33 +1,62 @@
 /* =====================================================
    PIXELZONE · style.css
    Orden:
-   1. Variables      5. Carrusel
-   2. Base           6. Footer
-   3. Botones        7. Página Error 404
-   4. Navbar         8. Accesibilidad
-                     9. Otras páginas
+   1. Variables        6. Footer
+   2. Base             7. Entradas (cards) y aside
+   3. Botones          8. Ventanas modales
+   4. Navbar           9. Página Error 404
+   5. Carrusel        10. Accesibilidad
+                      11. Otras páginas (Acerca de, Galería)
    ===================================================== */
 
 
 /* =====================================================
-   1. VARIABLES
+   1. VARIABLES  (un solo :root para todo el proyecto)
    ===================================================== */
 :root {
-  /* Colores */
-  --bg: #0E1117;
-  --nav-bg: #0A0D12;
-  --footer-bg: #0A0D12;
-  --border: #262C3A;
-  --text: #E8EAF0;
-  --link: #C7CCDA;
-  --muted: #A0A7B8;
-  --accent: #A78BFA;
-  --primary: #7C3AED;
-  --primary-hover: #6D28D9;
+  /* Fondos */
+  --bg: #0e1117;                  /* fondo general de la página */
+  --nav-bg: #0a0d12;              /* navbar */
+  --footer-bg: #0a0d12;
+  --surface: #171a26;             /* tarjetas, sidebar, modales */
+  --surface-input: #0c0e14;       /* campos de formulario */
+  --border: #262c3a;
+
+  /* Marca */
+  --primary: #7c3aed;             /* botones principales */
+  --primary-hover: #6d28d9;
+  --accent: #a78bfa;              /* "ZONE", etiquetas, links activos */
+  --primary-soft: #c4b5fd;        /* texto de botones outline */
+  --primary-border: #6d3fd1;      /* borde de botones outline */
+
+  /* Texto */
+  --text: #e8eaf0;                /* títulos */
+  --link: #c7ccda;                /* links del menú y footer */
+  --muted: #a0a7b8;               /* descripciones, placeholders */
+  --text-on-primary: #ffffff;
+
+  /* Degradados */
+  --gradient-hero: linear-gradient(135deg, #2e1f63 0%, #16233c 100%);
+  --gradient-image: linear-gradient(135deg, #2a2050 0%, #14233f 100%);
 
   /* Tipografías */
   --font-title: Rajdhani, Inter, sans-serif;
   --font-body: Inter, system-ui, sans-serif;
+
+  /* Alias de los nombres anteriores (para no romper nada que los use) */
+  --color-bg: var(--bg);
+  --color-bg-header: var(--nav-bg);
+  --color-surface: var(--surface);
+  --color-surface-input: var(--surface-input);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--accent);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-border: var(--primary-border);
+  --color-text: var(--text);
+  --color-text-muted: var(--muted);
+  --color-text-on-primary: var(--text-on-primary);
 }
 
 
@@ -35,10 +64,10 @@
    2. BASE
    ===================================================== */
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
   background: var(--bg);
   color: var(--text);
   font: 16px/1.5 var(--font-body);
@@ -67,14 +96,58 @@ main {
   color: var(--accent);
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 
 /* =====================================================
-   3. BOTONES (Suscripción, Login, Volver al inicio)
+   3. BOTONES
    ===================================================== */
+
+/* Botón relleno violeta (Ver más, Buscar, Entrar, Suscribirme) */
+.btn-primary-brand {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--text-on-primary);
+}
+.btn-primary-brand:hover,
+.btn-primary-brand:focus-visible {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--text-on-primary);
+}
+
+/* Botón con borde (Suscripción) */
+.btn-outline-brand,
+.suscription-button {
+  background: transparent;
+  border: 1px solid var(--primary-border);
+  color: var(--primary-soft);
+}
+.btn-outline-brand:hover,
+.btn-outline-brand:focus-visible,
+.suscription-button:hover,
+.suscription-button:focus-visible {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* Botón Login del navbar */
+.log-button {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
+}
+.log-button:hover,
+.log-button:focus-visible {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
+
+/* Botón .btn-pixel (usado en otras páginas) */
 .btn-pixel {
   display: inline-flex;
   align-items: center;
@@ -107,10 +180,9 @@ main {
   box-shadow: none;
 }
 
-/* Variante con borde (Suscripción) */
 .btn-pixel-outline {
   background: transparent;
-  color: #C4B5FD;
+  color: var(--primary-soft);
 }
 .btn-pixel-outline:hover,
 .btn-pixel-outline:focus-visible {
@@ -193,7 +265,7 @@ main {
    ===================================================== */
 .hero-slider .carousel-item {
   height: 420px;
-  background: linear-gradient(135deg, #2A2150, #16243A); /* mientras carga la foto */
+  background: linear-gradient(135deg, #2a2150, #16243a); /* mientras carga la foto */
   transition-duration: 1s;  /* velocidad del cambio de foto */
   will-change: opacity;
 }
@@ -278,6 +350,7 @@ main {
   background: var(--footer-bg);
   border-top: 1px solid var(--border);
   color: var(--text);
+  font-family: var(--font-body);
 }
 
 .site-footer h3 {
@@ -318,7 +391,144 @@ main {
 
 
 /* =====================================================
-   7. PÁGINA ERROR 404
+   7. ENTRADAS (cards) Y ASIDE
+   ===================================================== */
+
+/* Cards */
+.card-post {
+  --bs-card-bg: var(--surface);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  color: var(--muted);
+}
+
+.card-post .card-body {
+  padding: 0 0 0 1rem;
+}
+
+.card-post-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-tag {
+  color: var(--accent);
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-post-title {
+  margin: .25rem 0 .5rem;
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card-post .card-text {
+  color: var(--muted);
+}
+
+/* Aside */
+.aside-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.aside-label {
+  display: block;
+  margin-bottom: .5rem;
+  font-size: .85rem;
+  color: var(--text);
+}
+
+.aside-title {
+  margin-bottom: .75rem;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.aside-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.aside-list a {
+  display: block;
+  padding: .4rem 0;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.aside-list a:hover,
+.aside-list a:focus-visible {
+  color: var(--accent);
+}
+
+.ad-box {
+  min-height: 250px;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-image);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Aside fijo al hacer scroll (solo en pantallas grandes) */
+@media (min-width: 992px) {
+  aside {
+    position: sticky;
+    top: 80px;               /* deja lugar al navbar fijo */
+    align-self: flex-start;
+  }
+}
+
+
+/* =====================================================
+   8. VENTANAS MODALES Y FORMULARIOS
+   ===================================================== */
+.modal-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.modal-header {
+  border-bottom: 1px solid var(--border);
+}
+.modal .btn-close {
+  filter: invert(1) grayscale(1) brightness(1.5);   /* X visible sobre fondo oscuro */
+}
+
+.form-control {
+  background: var(--surface-input);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.form-control:focus {
+  background: var(--surface-input);
+  color: var(--text);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 .25rem rgba(124, 58, 237, .25);
+}
+.form-control::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+
+/* =====================================================
+   9. PÁGINA ERROR 404
    ===================================================== */
 .error-page {
   flex: 1;
@@ -352,7 +562,7 @@ main {
 
 
 /* =====================================================
-   8. ACCESIBILIDAD
+   10. ACCESIBILIDAD
    ===================================================== */
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -373,6 +583,339 @@ main {
 
 
 /* =====================================================
-   9. OTRAS PÁGINAS (galería, contacto, login...)
-   Pegá acá los estilos propios de cada página.
+   11. OTRAS PÁGINAS
    ===================================================== */
+
+/* ---------- Acerca de nosotros ---------- */
+.about-page {
+  --about-surface: #171a26;
+  --about-gradient: linear-gradient(135deg, #2a2150, #16243a); /* el mismo del carrusel */
+}
+
+.about-section {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2rem, 5vw, 3.5rem);
+  scroll-margin-top: 80px;
+}
+
+.about-heading {
+  margin-bottom: 1rem;
+  font: 700 clamp(1.75rem, 4vw, 2.25rem) / 1.15 var(--font-title);
+  color: var(--text);
+}
+
+.about-text {
+  max-width: 36rem;
+  color: var(--muted);
+}
+
+.about-lead {
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: var(--link);
+}
+
+/* Banner con imagen */
+.about-banner {
+  position: relative;
+  height: clamp(300px, 45vw, 420px);
+  background: var(--about-gradient);
+  overflow: hidden;
+}
+
+.about-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10, 13, 18, .75), rgba(10, 13, 18, 0) 35%),
+    linear-gradient(to top, rgba(10, 13, 18, .85), rgba(10, 13, 18, 0) 60%);
+}
+
+.about-banner-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 32px;
+}
+
+.about-banner .slide-title {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+/* Qué ofrecemos */
+.about-offer {
+  margin: 0;
+}
+
+.about-offer-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+}
+.about-offer-item:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.about-thumb {
+  flex-shrink: 0;
+  width: 112px;
+  height: 84px;
+  object-fit: cover;
+  background: var(--about-gradient);
+  border: 1px solid var(--border);
+}
+
+.about-offer-title {
+  margin: 0;
+  font: 600 1.35rem / 1.2 var(--font-title);
+  color: var(--text);
+}
+
+.about-offer-text {
+  margin: .25rem 0 0;
+  color: var(--muted);
+}
+
+@media (max-width: 575.98px) {
+  .about-thumb {
+    width: 88px;
+    height: 66px;
+  }
+}
+
+/* Lo que nos importa */
+.about-value {
+  padding-left: 1rem;
+  border-left: 3px solid var(--primary);
+}
+
+.about-value h3 {
+  margin-bottom: .35rem;
+  font: 600 1.25rem / 1.2 var(--font-title);
+  color: var(--text);
+}
+
+.about-value p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Equipo: pantalla de selección de jugador */
+.about-slot {
+  position: relative;
+  padding: 2rem 1rem 1.25rem;
+  background: var(--about-surface);
+  border: 1px solid var(--border);
+  text-align: center;
+  outline: 2px solid transparent;
+  outline-offset: 10px;
+  transition: outline-color .15s ease, outline-offset .15s ease,
+              border-color .15s ease;
+}
+.about-slot:hover {
+  border-color: var(--accent);
+  outline-color: var(--accent);
+  outline-offset: 4px;
+}
+
+.about-slot-tag {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  padding: .3rem .5rem;
+  background: var(--primary);
+  color: #fff;
+  font: 700 .8rem / 1 var(--font-title);
+  letter-spacing: .05em;
+}
+
+.about-avatar {
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  background: var(--about-gradient);
+  color: var(--accent);
+  font: 700 2rem / 1 var(--font-title);
+  letter-spacing: .04em;
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
+}
+
+/* Si el avatar lleva una foto en vez de iniciales */
+.about-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-slot-name {
+  margin: 0;
+  font: 600 1.15rem / 1.2 var(--font-title);
+  color: var(--text);
+}
+
+/* Cierre (el bloque original quedó cortado por el conflicto: revisar) */
+.about-cta {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* ---------- Galería ---------- */
+.page-galeria {
+  /* Variables propias de la galería, construidas con las generales */
+  --gal-fondo-card: #131822;
+  --gal-borde: var(--border);
+  --gal-acento: var(--accent);
+  --gal-texto-suave: var(--muted);
+
+  padding-bottom: 4rem;        /* sin padding-top: el banner arranca en el borde */
+}
+
+/* Banner con video. El navbar es fixed-top y flota sobre el banner. */
+.gal-banner {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 22rem;
+  margin-bottom: 2.5rem;
+  padding: 7rem 0 2rem;
+  overflow: hidden;
+  /* Si el video falla o tarda, el banner igual se ve */
+  background: linear-gradient(135deg, #2a2150, #16243a);
+}
+
+.gal-banner-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Capa degradada sobre el video */
+.gal-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 13, 18, .70) 0%,
+    rgba(10, 13, 18, .15) 40%,
+    var(--bg) 100%
+  );
+}
+
+.gal-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.gal-title {
+  margin: 0 0 .5rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #fff;
+}
+
+.gal-intro {
+  max-width: 55ch;
+  margin: 0;
+  color: var(--gal-texto-suave);
+}
+
+/* Tarjeta */
+.gal-card {
+  height: 100%;
+  margin: 0;
+  background: var(--gal-fondo-card);
+  border: 1px solid var(--gal-borde);
+  border-radius: .75rem;
+  overflow: hidden;
+  transition: border-color .2s ease;
+}
+.gal-card:hover {
+  border-color: var(--gal-acento);
+}
+
+/* Video de la tarjeta: proporción 4:3 recortando con cover */
+.gal-media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+.gal-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .35s ease;
+}
+.gal-card:hover .gal-media video,
+.gal-card:hover .gal-poster {
+  transform: scale(1.05);
+}
+
+.gal-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .35s ease;
+}
+.gal-card.is-playing .gal-poster {
+  opacity: 0;
+}
+
+/* Texto de la tarjeta */
+.gal-card figcaption {
+  padding: 1rem 1.1rem 1.25rem;
+}
+.gal-card-title {
+  margin: .5rem 0 .25rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+}
+.gal-card figcaption p {
+  margin: 0;
+  color: var(--gal-texto-suave);
+  font-size: .95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-card,
+  .gal-media video,
+  .gal-poster {
+    transition: none;
+  }
+  .gal-card:hover .gal-media video,
+  .gal-card:hover .gal-poster {
+    transform: none;
+  }
+}
