@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -20,12 +20,6 @@
     <title>Gaming Blog</title>
   </head>
   <body>
-    <header class="container">
-      <nav class="navbar navbar-expand-lg navbar-pixel">
-        <div class="container">
-          <a class="navbar-brand fw-bold pixel" href="index.html"
-            >PIXEL<span class="zone navbar-zone">ZONE</span></a
-          >
     <!-- NAVBAR -->
     <header>
       <nav
@@ -33,7 +27,10 @@
         data-bs-theme="dark"
       >
         <div class="container">
-          <a class="logo" href="index.html">PIXEL<span>ZONE</span></a>
+          <a class="navbar-brand logo" href="index.html"
+            >PIXEL<span>ZONE</span></a
+          >
+
           <button
             class="navbar-toggler"
             type="button"
@@ -50,275 +47,279 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link links"
+                  class="nav-link links active"
                   aria-current="page"
-                  href="/pages/error404.html"
+                  href="index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="/pages/galeria.html">Galeria</a>
+                <a class="nav-link links" href="pages/galeria.html">Galería</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="">Contacto</a>
+                <a class="nav-link links" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="/pages/acercadenosotros.html"
+                <a class="nav-link links" href="pages/acercadenosotros.html"
                   >Acerca de nosotros</a
                 >
               </li>
             </ul>
+
             <button
               class="btn btn-outline-brand me-4 suscription-button button-suscript"
+              type="button"
               data-bs-toggle="modal"
               data-bs-target="#suscription"
-              type="submit"
             >
-              Suscripcion
+              Suscripción
             </button>
           </div>
-          <div
+
+          <button
             class="btn log-button button-log"
+            type="button"
             data-bs-toggle="modal"
             data-bs-target="#login"
           >
             Login
-          </div>
+          </button>
         </div>
-        <div
-          class="modal fade"
-          id="suscription"
-          tabindex="-1"
-          aria-labelledby="suscriptionLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="suscriptionLabel">
-                  Suscribite al blog
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Cerrar"
-                ></button>
-              </div>
-
-              <div class="modal-body">
-                <p>Recibí las novedades gamer en tu correo</p>
-                <form>
-                  <div class="mb-3">
-                    <label for="subEmail" class="form-label"
-                      >Email<span class="text-danger"> *</span></label
-                    >
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="subEmail"
-                      placeholder="tu@gmail.com"
-                      minlength="10"
-                      maxlength="50"
-                      required
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary-brand w-100">
-                    Suscribirme
-                  </button>
-                </form>
-              </div>
-            </div>
+      </nav>
+    </header>
+    <!-- MODALES -->
+    <div
+      class="modal fade"
+      id="suscription"
+      tabindex="-1"
+      aria-labelledby="suscriptionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="suscriptionLabel">
+              Suscribite al blog
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
           </div>
-        </div>
-        <div class="modal fade" id="login" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5
-                  class="modal-title"
-                  id="loginweb"
-                  aria-labelledby="loginweb"
-                  aria-hidden="true"
+          <div class="modal-body">
+            <p>Recibí las novedades gamer en tu correo</p>
+            <form>
+              <div class="mb-3">
+                <label for="subEmail" class="form-label"
+                  >Email<span class="text-danger"> *</span></label
                 >
-                  Iniciar sesion
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="cerrar"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="loginEmail"
-                      placeholder="tu@gmail.com"
-                      required
-                      minlength="15"
-                      maxlength="50"
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="loginPass" class="form-label">Contraseña</label>
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="loginPass"
-                      placeholder="********"
-                      required
-                      minlength="15"
-                      maxlength="25"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary-brand w-100">
-                    Entrar
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main class="container">
-      <div class="row g-4">
-        <section class="col-lg-8" aria-labelledby="titulo-entradas">
-          <article class="card card-post mb-3">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-4">
-                <img
-                  src="./img/Gta6.jpg"
-                  alt="Portada GTA 6"
-                  class="img-fluid card-post-img"
+                <input
+                  type="email"
+                  class="form-control"
+                  id="subEmail"
+                  placeholder="tu@gmail.com"
+                  minlength="10"
+                  maxlength="50"
+                  required
                 />
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <span class="card-tag">GTA 6</span>
-                  <h3 class="card-post-title">
-                    Uno de los lanzamientos mas esperados
-                  </h3>
-                  <p class="card-text">
-                    GTA 6 promete ser el mejor juego de la saga hasta la fecha,
-                    con gráficos impresionantes y una historia envolvente.
-                  </p>
-                  <a
-                    href="https://www.youtube.com/watch?v=_yl5ELcmugI"
-                    class="btn btn-primary-brand"
-                    >Ver trailer</a
-                  >
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="card card-post mb-3">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-4">
-                <img
-                  src="./img/CEO.jpg"
-                  alt="Portada GTA 6"
-                  class="img-fluid card-post-img"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <span class="card-tag">Jensen Huang</span>
-                  <h3 class="card-post-title">
-                    El precio de las graficas se desploma
-                  </h3>
-                  <p class="card-text">
-                    Jensen Huang, CEO de NVIDIA, envuelto en un revuelo. Que
-                    puede comprometer la gran fortuna de su empresa. La noticia ha generado un gran conmosion en la industria tecnológica. 
-                  </p>
-                  <a href="https://www.infobae.com/estados-unidos/2026/11/10/el-divorcio-mas-caro-de-la-historia-la-esposa-del-ceo-de-nvidia-podria-recibir-usd-75000-millones/" class="btn btn-primary-brand">Leer mas</a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="card card-post mb-3">
-            <div class="row g-0 align-items-center">
-              <div class="col-md-4">
-                <img
-                  src="./img/ia.jpg"
-                  alt="Portada GTA 6"
-                  class="img-fluid card-post-img"
-                />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <span class="card-tag">La IA y el hacking.</span>
-                  <h3 class="card-post-title">
-                    Es momento de que detengamos la IA? 
-                  </h3>
-                  <p class="card-text">
-                    Despues del hackeo a BINANCE, se registraron mas de 100 intentos de hackeo a diferentes empresas. La IA esta siendo utilizada para vulnerar la seguridad de las empresas y robar informacion sensible.
-                  </p>
-                  <a href="https://www.infobae.com/tecno/2026/10/21/un-solo-hacker-uso-agentes-de-ia-para-infiltrarse-en-mas-de-100-sitios-web-de-empresas/" class="btn btn-primary-brand">Leer mas</a>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-         <aside class="col-lg-4">
-        <div class="aside-box mb-3">
-          <form role="search">
-            <label for="buscar" class="aside-label">Buscar artículos</label>
-            <div class="d-flex gap-2">
-              <input type="search" id="buscar" class="form-control" placeholder="Buscar" required>
-              <button type="submit" class="btn btn-primary-brand">Buscar</button>
-            </div>
-          </form>
-        </div>
-        <nav class="aside-box mb-3">
-          <h2 id="titulo-categorias" class="aside-title">Categorias</h2>
-          <ul class="aside-list">
-            <li><a href="https://vandal.elespanol.com/noticias/videojuegos">Noticias</a></li>
-            <li><a href="#">Reseñas</a></li>
-            <li><a href="#">Guias</a></li>
-            <li><a href="#">PC</a></li>
-            <li><a href="#">Consolas</a></li>
-            <li><a href="#">Indie</a></li>
-            <li><a href="#">Retro</a></li>
-          </ul>
-        </nav>
-        <div class="ad-box d-none d-lg-flex">
-          <span>Publicidad</span>
-        </div>
-      </aside>
-      </div>
-    </main>
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/galeria.html">Galería</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pages/acerca.html">Acerca de nosotros</a>
-              </li>
-            </ul>
-
-            <div class="d-flex gap-2">
-              <button class="btn-pixel btn-pixel-outline" type="button">
-                Suscripción
+              <button type="submit" class="btn btn-primary-brand w-100">
+                Suscribirme
               </button>
-              <a class="btn-pixel" href="pages/login.html">Login</a>
-            </div>
+            </form>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </div>
 
-    <!-- CONTENIDO -->
+    <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      aria-labelledby="loginweb"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginweb">Iniciar sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  placeholder="tu@gmail.com"
+                  minlength="15"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="loginPass" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPass"
+                  placeholder="********"
+                  minlength="15"
+                  maxlength="25"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary-brand w-100">
+                Entrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     <main>
+      <div class="container py-4">
+        <div class="row g-4">
+          <section class="col-lg-8" aria-labelledby="Ultimas entradas">
+            <article class="card card-post mb-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4">
+                  <img
+                    src="./img/Gta6.jpg"
+                    alt="Portada GTA 6"
+                    class="img-fluid card-post-img"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <span class="card-tag">GTA 6</span>
+                    <h3 class="card-post-title">
+                      Uno de los lanzamientos mas esperados
+                    </h3>
+                    <p class="card-text">
+                      GTA 6 promete ser el mejor juego de la saga hasta la
+                      fecha, con gráficos impresionantes y una historia
+                      envolvente.
+                    </p>
+                    <a
+                      href="https://www.youtube.com/watch?v=_yl5ELcmugI"
+                      class="btn btn-primary-brand"
+                      >Ver trailer</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card card-post mb-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4">
+                  <img
+                    src="./img/CEO.jpg"
+                    alt="Ceo de NVIDIA"
+                    class="img-fluid card-post-img"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <span class="card-tag">Jensen Huang</span>
+                    <h3 class="card-post-title">
+                      El precio de las graficas se desploma
+                    </h3>
+                    <p class="card-text">
+                      Jensen Huang, CEO de NVIDIA, envuelto en un revuelo. Que
+                      puede comprometer la gran fortuna de su empresa. La
+                      noticia ha generado un gran conmosion en la industria
+                      tecnológica.
+                    </p>
+                    <a
+                      href="https://www.infobae.com/estados-unidos/2026/11/10/el-divorcio-mas-caro-de-la-historia-la-esposa-del-ceo-de-nvidia-podria-recibir-usd-75000-millones/"
+                      class="btn btn-primary-brand"
+                      >Leer mas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+            <article class="card card-post mb-3">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4">
+                  <img
+                    src="./img/ia.jpg"
+                    alt="HACKING IA"
+                    class="img-fluid card-post-img"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <span class="card-tag">La IA y el hacking.</span>
+                    <h3 class="card-post-title">
+                      Es momento de que detengamos la IA?
+                    </h3>
+                    <p class="card-text">
+                      Despues del hackeo a BINANCE, se registraron mas de 100
+                      intentos de hackeo a diferentes empresas. La IA esta
+                      siendo utilizada para vulnerar la seguridad de las
+                      empresas y robar informacion sensible.
+                    </p>
+                    <a
+                      href="https://www.infobae.com/tecno/2026/10/21/un-solo-hacker-uso-agentes-de-ia-para-infiltrarse-en-mas-de-100-sitios-web-de-empresas/"
+                      class="btn btn-primary-brand"
+                      >Leer mas</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+          <aside class="col-lg-4">
+            <div class="aside-box mb-3">
+              <form role="search">
+                <label for="buscar" class="aside-label">Buscar artículos</label>
+                <div class="d-flex gap-2">
+                  <input
+                    type="search"
+                    id="buscar"
+                    class="form-control"
+                    placeholder="Buscar"
+                    required
+                  />
+                  <button type="submit" class="btn btn-primary-brand">
+                    Buscar
+                  </button>
+                </div>
+              </form>
+            </div>
+            <nav class="aside-box mb-3">
+              <h2 id="titulo-categorias" class="aside-title">Categorias</h2>
+              <ul class="aside-list">
+                <li>
+                  <a href="https://vandal.elespanol.com/noticias/videojuegos"
+                    >Noticias</a
+                  >
+                </li>
+                <li><a href="#">Reseñas</a></li>
+                <li><a href="#">Guias</a></li>
+                <li><a href="#">PC</a></li>
+                <li><a href="#">Consolas</a></li>
+                <li><a href="#">Indie</a></li>
+                <li><a href="#">Retro</a></li>
+              </ul>
+            </nav>
+            <div class="ad-box d-none d-lg-flex">
+              <span>Publicidad</span>
+            </div>
+          </aside>
+        </div>
+      </div>
       <h1 class="visually-hidden">PixelZone, blog de videojuegos</h1>
 
       <!-- CARRUSEL DESTACADOS -->
@@ -331,23 +332,36 @@
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/destacado-1.jpg.jfif" alt="Descripción de la imagen 1" />
+            <img
+              src="img/destacado-1.jpg.jfif"
+              alt="Descripción de la imagen 1"
+            />
             <div class="carousel-caption">
               <span class="tag">Destacado</span>
-              <h2 class="slide-title">Tu setup gamer ideal: qué comprar primero</h2>
+              <h2 class="slide-title">
+                Tu setup gamer ideal: qué comprar primero
+              </h2>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="img/destacado-2.jpg.jfif" alt="Descripción de la imagen 2" />
+            <img
+              src="img/destacado-2.jpg.jfif"
+              alt="Descripción de la imagen 2"
+            />
             <div class="carousel-caption">
               <span class="tag">Destacado</span>
-              <h2 class="slide-title">Los clásicos que todavía vale la pena volver a jugar</h2>
+              <h2 class="slide-title">
+                Los clásicos que todavía vale la pena volver a jugar
+              </h2>
             </div>
           </div>
 
           <div class="carousel-item">
-            <img src="img/destacado-3.jpg.jfif" alt="Descripción de la imagen 3" />
+            <img
+              src="img/destacado-3.jpg.jfif"
+              alt="Descripción de la imagen 3"
+            />
             <div class="carousel-caption">
               <span class="tag">Destacado</span>
               <h2 class="slide-title">Joyitas independientes del año</h2>

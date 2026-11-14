@@ -71,6 +71,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font: 16px/1.5 var(--font-body);
+  padding-top: 80px;
 }
 
 /* main ocupa el espacio sobrante: empuja el footer abajo */
