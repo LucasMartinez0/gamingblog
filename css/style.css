@@ -872,6 +872,7 @@ main {
 
 .about-slot-name {
   margin: 0;
+  padding: .9rem .5rem;
   font: 600 1.15rem / 1.2 var(--font-title);
   color: var(--text);
 }
