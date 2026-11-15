@@ -427,7 +427,7 @@ main {
   }
 }
 
-/* ---------- Lo que nos importa ---------- */
+/* Lo que nos importa */
 .about-value {
   border-left: 3px solid var(--primary);
   padding-left: 1rem;
@@ -447,10 +447,8 @@ main {
 
 /* ---------- Equipo: pantalla de selección de jugador ---------- */
 .about-slot {
-  position: relative;
   background: var(--about-surface);
   border: 1px solid var(--border);
-  padding: 2rem 1rem 1.25rem;
   text-align: center;
   outline: 2px solid transparent;
   outline-offset: 10px;
@@ -476,36 +474,29 @@ main {
 }
 
 .about-avatar {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 1rem;
+  position: relative;
   display: grid;
-  place-items: center;
+  place-items: center;          
+  aspect-ratio: 4 / 5;          
+  overflow: hidden;
   background: var(--about-gradient);
   color: var(--accent);
-  font: 700 2rem / 1 var(--font-title);
-  letter-spacing: .04em;
-  clip-path: polygon(
-    0 8px, 8px 8px, 8px 0,
-    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
-    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
-    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
-  );
-}
+  font: 700 2.5rem / 1 var(--font-title);
 
-/*  lleva una foto en vez de iniciales */
 .about-avatar img {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;            
+  object-position: center 20%; 
 }
 
 .about-slot-name {
+  margin: 0;
+  padding: .9rem .5rem;
   font: 600 1.15rem / 1.2 var(--font-title);
   color: var(--text);
-  margin: 0;
-}
 
 
 /* ---------- Cierre ---------- */
@@ -567,3 +558,4 @@ main {
     transform: none;
   }
 }
+
