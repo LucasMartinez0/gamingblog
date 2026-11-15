@@ -102,8 +102,8 @@ flowchart LR
 | 🏠 Inicio | `index.html` | ✅ Listo |
 | 🖼️ Galería | `pages/galeria.html` | ✅ Listo |
 | ⚠️ Error 404 | `pages/error404.html` | ✅ Listo |
-| 👥 Acerca de nosotros | `pages/acerca.html` | 🚧 En desarrollo |
-| 📩 Contacto | `pages/contacto.html` | 🚧 En desarrollo |
+| 👥 Acerca de nosotros | `pages/acerca.html` | ✅ Listo   |
+| 📩 Contacto | `pages/contacto.html` | ✅ Listo  |
 | ⭐ Reseñas (artículo) | `pages/resenas.html` | 🗓️ Planificada |
 
 <!-- COMPLETAR: ajustar los estados según cómo estén las páginas de tus compañeros -->
@@ -179,7 +179,7 @@ pixelzone/
 ├── videos/                 # Banner y videos de las tarjetas de la galería
 └── pages/
     ├── galeria.html
-    ├── acerca.html
+    ├── acercadenosotros.html
     ├── contacto.html
     └── error404.html
 ```
@@ -194,7 +194,7 @@ No necesita instalación ni compilación: es un sitio estático.
 
 ```bash
 git clone https://github.com/LucasMartinez0/gamingblog.git
-cd NOMBRE-DEL-REPO
+cd GamingBlog
 ```
 
 **2. Abrirlo con un servidor local** (recomendado, para que carguen bien los videos)
