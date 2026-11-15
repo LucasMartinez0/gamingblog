@@ -502,6 +502,20 @@ main {
 
 /* ---------- Cierre ---------- */
 .about-cta {
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-slot {
+    transition: none;
+  }
+}
 /* =====================================================
    7. PÁGINA ERROR 404
    ===================================================== */
