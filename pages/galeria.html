@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar navbar-expand-lg fixed-top site-nav" data-bs-theme="dark">
         <div class="container">
-          <a class="logo" href="../index.html">PIXEL<span>ZONE</span></a>
+          <a class="navbar-brand logo" href="../index.html">PIXEL<span>ZONE</span></a>
 
           <button
             class="navbar-toggler"
@@ -43,17 +43,129 @@
                 <a class="nav-link active" aria-current="page" href="galeria.html">Galería</a>
               </li>
               <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-              <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de nosotros</a></li>
+              <li class="nav-item"><a class="nav-link" href="acercadenosotros.html">Acerca de nosotros</a></li>
             </ul>
 
-            <div class="d-flex gap-2">
-              <button class="btn-pixel btn-pixel-outline" type="button">Suscripción</button>
-              <a class="btn-pixel" href="login.html">Login</a>
-            </div>
-          </div>
+           <button
+  class="btn-pixel btn-pixel-outline"
+  type="button"
+  data-bs-toggle="modal"
+  data-bs-target="#suscription"
+>
+  Suscripción
+</button>
+<button
+  class="btn-pixel"
+  type="button"
+  data-bs-toggle="modal"
+  data-bs-target="#login"
+>
+  Login
+</button>
         </div>
       </nav>
     </header>
+<!-- MODALES -->
+    <div
+      class="modal fade"
+      id="suscription"
+      tabindex="-1"
+      aria-labelledby="suscriptionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="suscriptionLabel">
+              Suscribite al blog
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Recibí las novedades gamer en tu correo</p>
+            <form>
+              <div class="mb-3">
+                <label for="subEmail" class="form-label"
+                  >Email<span class="text-danger"> *</span></label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="subEmail"
+                  placeholder="tu@gmail.com"
+                  minlength="10"
+                  maxlength="50"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary-brand w-100">
+                Suscribirme
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      aria-labelledby="loginweb"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginweb">Iniciar sesión</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email</label>
+                <input
+    type="email"
+    class="form-control"
+    id="loginEmail"
+    placeholder="tu@gmail.com"
+    minlength="15"
+    maxlength="50"
+    autocomplete="username"
+    required
+>
+              </div>
+              <div class="mb-3">
+                <label for="loginPass" class="form-label">Contraseña</label>
+                <input
+    type="password"
+    class="form-control"
+    id="loginPass"
+    placeholder="********"
+    minlength="15"
+    maxlength="25"
+    autocomplete="current-password"
+    required
+>
+              </div>
+              <button type="submit" class="btn btn-primary-brand w-100">
+                Entrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main class="page-galeria">
       <!-- BANNER (video en loop): queda detrás del navbar (que es fixed-top) -->
@@ -249,7 +361,7 @@
           <div class="col-12 col-md-4">
             <h3>Info</h3>
             <ul class="list-unstyled footer-links">
-              <li><a href="acerca.html">Acerca de nosotros</a></li>
+              <li><a href="acercadenosotros.html">Acerca de nosotros</a></li>
               <li><a href="contacto.html">Contacto</a></li>
               <li><a href="#">Términos y condiciones</a></li>
             </ul>
