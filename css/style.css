@@ -486,6 +486,14 @@ main {
   font-size: .9rem;
 }
 
+.gif-img {
+  max-width: 300px;
+  min-height: 0px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-style: solid;
+}
+
 /* Aside fijo al hacer scroll (solo en pantallas grandes) */
 @media (min-width: 992px) {
   aside {
