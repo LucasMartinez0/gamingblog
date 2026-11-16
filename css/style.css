@@ -560,51 +560,12 @@ main {
 
 
 /* ---------- Equipo: pantalla de selección de jugador ---------- */
-.about-slot {
-  background: var(--about-surface);
-  border: 1px solid var(--border);
-  text-align: center;
-  outline: 2px solid transparent;
-  outline-offset: 10px;
-  transition: outline-color .15s ease, outline-offset .15s ease,
-              border-color .15s ease;
-}
+
 
 .about-slot:hover {
   border-color: var(--accent);
   outline-color: var(--accent);
   outline-offset: 4px;
-}
-
-.about-slot-tag {
-  position: absolute;
-  top: .5rem;
-  left: .5rem;
-  padding: .3rem .5rem;
-  background: var(--primary);
-  color: #fff;
-  font: 700 .8rem / 1 var(--font-title);
-  letter-spacing: .05em;
-}
-
-.about-avatar {
-  position: relative;
-  display: grid;
-  place-items: center;          
-  aspect-ratio: 4 / 5;          
-  overflow: hidden;
-  background: var(--about-gradient);
-  color: var(--accent);
-  font: 700 2.5rem / 1 var(--font-title);
-  }
-
-.about-avatar img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
 }
 
 .about-slot-name {
@@ -872,6 +833,7 @@ main {
 
 .about-slot-name {
   margin: 0;
+  padding: .9rem .5rem;
   font: 600 1.15rem / 1.2 var(--font-title);
   color: var(--text);
 }
@@ -1021,5 +983,56 @@ main {
   .gal-card:hover .gal-media video,
   .gal-card:hover .gal-poster {
     transform: none;
+  }
+}
+
+/* ----- FIX: fotos del equipo (Acerca de nosotros) ----- */
+.about-slot {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+.about-slot-tag {
+  z-index: 1;                 /* para que la etiqueta quede arriba de la foto */
+}
+.about-avatar {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  clip-path: none;            /* saca el recorte en escalones */
+  overflow: hidden;
+}
+.about-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  }
+    /* encuadra la cara; subí o bajá el 20% si hace falta */
+/* Publicidad (GIF) */
+.gif-img {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--gradient-image);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.gif-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* En celular y tablet el aside queda debajo de las entradas:
+   limitamos el ancho para que el GIF no se vea gigante y lo centramos */
+@media (max-width: 991.98px) {
+  .gif-img {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }

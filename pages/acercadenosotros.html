@@ -25,45 +25,62 @@
     <title>Acerca de nosotros | PixelZone</title>
   </head>
   <body>
-    <header class="container">
-      <nav class="navbar navbar-expand-lg">
+    <header>
+      <nav
+        class="navbar navbar-expand-lg fixed-top site-nav"
+        data-bs-theme="dark"
+      >
         <div class="container">
-          <a class="navbar-brand fw-bold pixel" href="../index.html"
-            >PIXEL<span class="zone">ZONE</span></a
-          >
+          <a class="logo" href="../index.html">PIXEL<span>ZONE</span></a>
           <button
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
             aria-expanded="false"
-            aria-label="Toggle navigation"
+            aria-label="Abrir menú"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link links" href="../index.html">Inicio</a>
+                <a class="nav-link" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="./galeria.html">Galeria</a>
+                <a class="nav-link" href="galeria.html">Galería</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link links" href="./contacto.html">Contacto</a>
+                <a class="nav-link" href="contacto.html">Contacto</a>
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link links"
+                  class="nav-link active"
                   aria-current="page"
-                  href="./acercadenosotros.html"
+                  href="acercadenosotros.html"
                   >Acerca de nosotros</a
                 >
               </li>
             </ul>
-            <button class="btn-pixel btn-pixel-outline" type="button" data-bs-toggle="modal"  data-bs-target="#suscription"> Suscripción</button>
-            <button class="btn-pixel" type="button" data-bs-toggle="modal" data-bs-target="#login"> Login </button>
+            <button
+              class="btn btn-outline-brand me-4 suscription-button button-suscript"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#suscription"
+            >
+              Suscripción
+            </button>
+            <button
+              class="btn log-button button-log"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#login"
+            >
+              Login
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -166,10 +183,10 @@
         </div>
       </div>
     </div>
-    
+
     <main class="about-page">
       <section class="about-banner" aria-labelledby="about-title">
-        <img src="../images/destacado-1.jpg.jfif" alt="" />
+        <img src="../img/acercadenosotros.jpg" alt="" />
         <div class="about-banner-caption container">
           <span class="tag">Acerca de nosotros</span>
           <h1 id="about-title" class="about-title">
@@ -300,28 +317,36 @@
           <div class="col">
             <article class="about-slot">
               <span class="about-slot-tag">P1</span>
-              <div class="about-avatar"> <img src="../img/lucas.jpeg" alt="Foto de Lucas Martinez" /></div>
+              <div class="about-avatar">
+                <img src="../img/lucas.jpeg" alt="Foto de Lucas Martinez" />
+              </div>
               <h3 class="about-slot-name">Lucas Martinez</h3>
             </article>
           </div>
           <div class="col">
             <article class="about-slot">
               <span class="about-slot-tag">P2</span>
-              <div class="about-avatar"> <img src="../img/diego.jpg" alt="Foto de Diego Borgmann" /></div>
+              <div class="about-avatar">
+                <img src="../img/diego.jpg" alt="Foto de Diego Borgmann" />
+              </div>
               <h3 class="about-slot-name">Diego Borgmann</h3>
             </article>
           </div>
           <div class="col">
             <article class="about-slot">
               <span class="about-slot-tag">P3</span>
-              <div class="about-avatar"> <img src="../img/francisco.jpeg" alt="Foto de Francisco Diaz" /></div>
+              <div class="about-avatar">
+                <img src="../img/francisco.jpeg" alt="Foto de Francisco Diaz" />
+              </div>
               <h3 class="about-slot-name">Francisco Diaz</h3>
             </article>
           </div>
           <div class="col">
             <article class="about-slot">
               <span class="about-slot-tag">P4</span>
-              <div class="about-avatar"> <img src="../img/javier.jpeg" alt="Foto de Javier Picuard" /></div>
+              <div class="about-avatar">
+                <img src="../img/javier.jpeg" alt="Foto de Javier Picuard" />
+              </div>
               <h3 class="about-slot-name">Javier Picuard</h3>
             </article>
           </div>
