@@ -1024,3 +1024,27 @@ main {
     transform: none;
   }
 }
+
+/* Publicidad (GIF) */
+.gif-img {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--gradient-image);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.gif-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* En celular y tablet el aside queda debajo de las entradas:
+   limitamos el ancho para que el GIF no se vea gigante y lo centramos */
+@media (max-width: 991.98px) {
+  .gif-img {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
